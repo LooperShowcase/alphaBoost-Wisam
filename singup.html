@@ -7,55 +7,43 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="singup.html">singup</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a class="active" href="#about">About</a></li>
-      <li style="float: right;">         <img id="profpic" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png">     </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li style="float: right">
+        <img
+          id="profpic"
+          src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+        />
+      </li>
+      <li style="float: right">
+        <input type="color" id="colorepicker" onchange="changebg()" />
+      </li>
     </ul>
 
- 
+    <form>
+      <label for="fname"> First name</label><br />
+      <input type="text" /><br />
+      <label for="password"> Last name </label><br />
+      <input type="text" /> <br />
+      <label for="password"> Password: </label><br />
+      <input type="password" /> <br />
+      <input type="file" id="uploadPic" onchange="changepic()" />
+      
+    </form>
 
+    <footer>
+      <p>thank you for visiting my website</p>
+    </footer>
 
+    <script>
+      function changebg() {
+        var newcolor = document.getElementById("colorepicker").value;
+        document.body.style.background = newcolor;
+      }
 
-
-<form>
-
-    <label for="fname"> First name</label><br>
-    <input type="text"><br>
-    <label for="password"> Password: </label><br>
-    <input type="password"> 
-<br>
-<label for="fname">first name :</label><br />
-<input type="text"id= "fname" name="fname"/><br />
-<label for="iname ">       </label>
-
-
-<input id="mypic" 
-
-
-</form> 
-
-
-
-
-
-
-
-
-<script> 
-function changebg () {
- var newcolor = docmunt .getelm=Elementbyid("colorepicker").value;
- document.body.style.background=newcolor;
-}
-
-function changepic()
-{
-
-}
-
-
-
-</script>
-
-
+      function changepic() {
+        var newPic = document.getElementById("uploadPic").files[0].name;
+        document.getElementById("profpic").src = newPic;
+      }
+    </script>
   </body>
 </html>
